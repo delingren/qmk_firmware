@@ -13,7 +13,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 bool led_update_user(led_t led_state) {
-    writePin(C5, !led_state.caps_lock);
-    writePin(C6, !IS_LAYER_ON(2)); // repurpose scroll lock indicator for layer 2.
+    writePin(B0, !led_state.caps_lock);
+    writePin(B1, !IS_LAYER_ON(2)); // repurpose scroll lock indicator for layer 2.
     return false; // prevent keyboard from processing state
 }
