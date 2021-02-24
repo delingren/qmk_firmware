@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // O>: PageUp PageDown
     [1] = LAYOUT_tkl_ansi(
         _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______,      _______, _______, _______,
-        KC_ESC,  KC_BRID, KC_BRIU, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_MRWD, KC_MPLY, KC_MFFD, KC_MUTE, KC_VOLD,  KC_VOLU, _______,      _______, _______, _______,
+        KC_ESC,  KC_BRID, KC_BRIU, KC_NO,   KC_NO,   BL_DEC,  BL_INC,  KC_MRWD, KC_MPLY, KC_MFFD, KC_MUTE, KC_VOLD,  KC_VOLU, _______,      _______, _______, _______,
         _______, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_HOME, KC_UP,   KC_PGUP, KC_NO,   KC_NO,    KC_NO,   KC_NO,        _______, _______, _______,
         _______, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,   KC_NO,             _______,
         _______,          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_END,  KC_NO,   KC_PGDN, KC_NO,             _______,               _______,
@@ -72,25 +72,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // some key has been pressed when CAPSLOCK is being held.
-    static bool someKeyPressed = false;
+    static bool other_key_pressed = false;
+    static uint16_t time_pressed;
 
     switch (keycode) {
     case KC_NAVCAPS:
         if (record->event.pressed) {
-            someKeyPressed = false;
+            other_key_pressed = false;
+            time_pressed = record->event.time;
             // turn on navigation layer
             layer_on(1);
         } else {
             // turn off navigation layer
             layer_off(1);
-            // if no key has been pressed while CAPSLOCK is being held, it behaves like a normal CAPSLOCK
-            if (!someKeyPressed) {
+            // if no key has been pressed while CAPSLOCK was being tapped, it behaves like a normal CAPSLOCK
+            // otherwise it's considered a layer key.
+            if (!other_key_pressed && TIMER_DIFF_16(record->event.time, time_pressed) < TAPPING_TERM) {
                 SEND_STRING(SS_TAP(X_CAPSLOCK));
             }
         }
         return false;
     default:
-        someKeyPressed = true;
+        other_key_pressed = true;
         return true;
   }
 }
