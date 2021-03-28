@@ -41,7 +41,10 @@ void keyboard_pre_init_user() {
 
 bool led_update_user(led_t usb_led) {
     writePin(B0, !usb_led.caps_lock);
-    writePin(D5, !IS_LAYER_ON(_ML));
-
     return false;
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    writePin(D5, IS_LAYER_ON_STATE(state, _ML) ? 0 : 1);
+    return state;
 }
