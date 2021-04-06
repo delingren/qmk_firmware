@@ -5,7 +5,7 @@ BOARD = QMK_PROTON_C
 # Do not put the microcontroller into power saving mode
 # when we get USB suspend event. We want it to keep updating
 # backlight effects.
-OPT_DEFS += -DNO_SUSPEND_POWER_DOWN
+OPT_DEFS += -D		zzNO_SUSPEND_POWER_DOWN
 
 # Build Options
 #   comment out to disable the options.

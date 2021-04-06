@@ -2990,6 +2990,11 @@ bool process_record_backlight(uint16_t keycode, keyrecord_t *record)
     return true;
 }
 
+
+#define RGBLIGHT_HUE_STEP 32
+#define RGBLIGHT_SAT_STEP 32
+#define RGBLIGHT_VAL_STEP 64
+
 // Deals with the messy details of incrementing an integer
 uint8_t increment( uint8_t value, uint8_t step, uint8_t min, uint8_t max )
 {
@@ -3031,61 +3036,61 @@ void backlight_effect_speed_decrease(void)
 
 void backlight_brightness_increase(void)
 {
-    g_config.brightness = increment( g_config.brightness, 8, 0, 255 );
+    g_config.brightness = increment( g_config.brightness, RGBLIGHT_VAL_STEP, 0, 255 );
     backlight_config_save();
 }
 
 void backlight_brightness_decrease(void)
 {
-    g_config.brightness = decrement( g_config.brightness, 8, 0, 255 );
+    g_config.brightness = decrement( g_config.brightness, RGBLIGHT_VAL_STEP, 0, 255 );
     backlight_config_save();
 }
 
 void backlight_color_1_hue_increase(void)
 {
-    g_config.color_1.h = increment( g_config.color_1.h, 8, 0, 255 );
+    g_config.color_1.h = increment( g_config.color_1.h, RGBLIGHT_HUE_STEP, 0, 255 );
     backlight_config_save();
 }
 
 void backlight_color_1_hue_decrease(void)
 {
-    g_config.color_1.h = decrement( g_config.color_1.h, 8, 0, 255 );
+    g_config.color_1.h = decrement( g_config.color_1.h, RGBLIGHT_HUE_STEP, 0, 255 );
     backlight_config_save();
 }
 
 void backlight_color_1_sat_increase(void)
 {
-    g_config.color_1.s = increment( g_config.color_1.s, 8, 0, 255 );
+    g_config.color_1.s = increment( g_config.color_1.s, RGBLIGHT_SAT_STEP, 0, 255 );
     backlight_config_save();
 }
 
 void backlight_color_1_sat_decrease(void)
 {
-    g_config.color_1.s = decrement( g_config.color_1.s, 8, 0, 255 );
+    g_config.color_1.s = decrement( g_config.color_1.s, RGBLIGHT_SAT_STEP, 0, 255 );
     backlight_config_save();
 }
 
 void backlight_color_2_hue_increase(void)
 {
-    g_config.color_2.h = increment( g_config.color_2.h, 8, 0, 255 );
+    g_config.color_2.h = increment( g_config.color_2.h, RGBLIGHT_HUE_STEP, 0, 255 );
     backlight_config_save();
 }
 
 void backlight_color_2_hue_decrease(void)
 {
-    g_config.color_2.h = decrement( g_config.color_2.h, 8, 0, 255 );
+    g_config.color_2.h = decrement( g_config.color_2.h, RGBLIGHT_HUE_STEP, 0, 255 );
     backlight_config_save();
 }
 
 void backlight_color_2_sat_increase(void)
 {
-    g_config.color_2.s = increment( g_config.color_2.s, 8, 0, 255 );
+    g_config.color_2.s = increment( g_config.color_2.s, RGBLIGHT_SAT_STEP, 0, 255 );
     backlight_config_save();
 }
 
 void backlight_color_2_sat_decrease(void)
 {
-    g_config.color_2.s = decrement( g_config.color_2.s, 8, 0, 255 );
+    g_config.color_2.s = decrement( g_config.color_2.s, RGBLIGHT_SAT_STEP, 0, 255 );
     backlight_config_save();
 }
 
