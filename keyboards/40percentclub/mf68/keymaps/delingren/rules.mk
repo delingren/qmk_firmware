@@ -1,0 +1,2 @@
+SLEEP_LED_ENABLE = yes
+NKRO_ENABLE = no
