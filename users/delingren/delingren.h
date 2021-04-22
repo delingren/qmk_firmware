@@ -14,17 +14,17 @@ LAYOUT_tkl_ansi( \
     KC_TAB,     KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC,KC_BSLS,      KC_DEL, KC_END, KC_PGDN, \
     FL_CAPS,      KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_ENT,                                      \
     KC_LSFT,          KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,                        KC_UP,           \
-    KC_LCTL,  KC_LALT,  KC_LGUI,                      KC_SPC,                       KC_RGUI,  TO(_FL),  MO(_LL),  KC_RCTL,    KC_LEFT,KC_DOWN,KC_RGHT  \
+    KC_LCTL,  KC_LALT,  KC_LGUI,                      KC_SPC,                       KC_RGUI,  MO(_FL),  MO(_LL),  KC_RCTL,    KC_LEFT,KC_DOWN,KC_RGHT  \
 )
 
 #define _FL_tkl_ansi \
 LAYOUT_tkl_ansi( \
-    _______,        _______,_______,_______,_______,    _______,_______,_______,_______,    _______,_______,_______,_______,  KC_MRWD,KC_MFFD,KC_MPLY, \
-    _______,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_DEL,           KC_BTN1,KC_MS_U,KC_BTN2, \
-    _______,    _______,_______,_______,RESET,  _______,_______,_______,KC_UP,  _______,_______,KC_HOME,KC_END, _______,      KC_MS_L,KC_MS_D,KC_MS_R, \
+    KC_SLEP,        _______,_______,_______,_______,    _______,_______,_______,_______,    _______,_______,_______,_______,  KC_MRWD,KC_MFFD,KC_MPLY, \
+    _______,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_DEL,           KC_BTN2,_______,KC_WH_D, \
+    _______,    _______,_______,_______,RESET,  _______,_______,_______,KC_UP,  _______,_______,KC_HOME,KC_END, _______,      KC_BTN1,_______,KC_WH_U, \
     _______,      _______,_______,_______,_______,_______,_______,KC_LEFT,KC_DOWN,KC_RGHT,KC_PGUP,KC_PGDN,_______,                                     \
-    _______,          _______,_______,_______,_______,_______,_______,_______,KC_VOLD,KC_VOLU,KC_MUTE,_______,                        KC_WH_D,         \
-    _______,  _______,  _______,                      _______,                      _______,  _______,  _______,  _______,    KC_BTN1,KC_WH_U,KC_BTN2  \
+    _______,          _______,_______,_______,_______,_______,_______,_______,KC_VOLD,KC_VOLU,KC_MUTE,_______,                        KC_MS_U,         \
+    _______,  _______,  _______,                      _______,                      _______,  _______,  _______,  _______,    KC_MS_L,KC_MS_D,KC_MS_R  \
 )
 
 #define _LL_tkl_ansi \
@@ -44,12 +44,12 @@ LAYOUT_68_ansi( \
     KC_TAB,     KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC,KC_RBRC,KC_BSLS,      KC_DEL, KC_PGDN, \
     FL_CAPS,      KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,KC_ENT,                              \
     KC_LSFT,          KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,                KC_UP,           \
-    KC_LCTL,  KC_LALT,  KC_LGUI,                      KC_SPC,                       KC_RGUI,  TG(_FL),  MO(_LL),      KC_LEFT,KC_DOWN,KC_RGHT  \
+    KC_LCTL,  KC_LALT,  KC_LGUI,                      KC_SPC,                       KC_RGUI,  MO(_FL),  MO(_LL),      KC_LEFT,KC_DOWN,KC_RGHT  \
 )
 
 #define _FL_mf68_ansi \
 LAYOUT_68_ansi( \
-    _______,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_DEL,           KC_BTN2,KC_WH_D, \
+    KC_SLEP,KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,  KC_F10, KC_F11, KC_F12, KC_DEL,           KC_BTN2,KC_WH_D, \
     _______,    _______,_______,_______,RESET,  _______,_______,_______,KC_UP,  _______,_______,KC_HOME,KC_END, _______,      KC_BTN1,KC_WH_U, \
     _______,      _______,_______,_______,_______,_______,_______,KC_LEFT,KC_DOWN,KC_RGHT,KC_PGUP,KC_PGDN,_______,                             \
     _______,          _______,_______,_______,_______,_______,_______,_______,KC_VOLD,KC_VOLU,KC_MUTE,_______,                KC_MS_U,         \
