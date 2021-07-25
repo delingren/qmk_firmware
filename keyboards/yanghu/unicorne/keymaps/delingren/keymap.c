@@ -23,13 +23,16 @@
 #define RAISE MO(_RAISE)
 #define ADJUST MO(_ADJUST)
 
+#define LT_ENT LT(LOWER, KC_ENT)
+#define LT_SPC LT(RAISE, KC_SPC)
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_unicorne(
-    KC_TAB,  KC_Q, KC_W, KC_E, KC_R, KC_T,                                 KC_Y, KC_U, KC_I,    KC_O,   KC_P,    KC_BSPC,
-    KC_GESC, KC_A, KC_S, KC_D, KC_F, KC_G,                                 KC_H, KC_J, KC_K,    KC_L,   KC_SCLN, KC_QUOT,
-    KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B,                                 KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, RSFT_T(KC_ENT),
-                   KC_LCTL, KC_LALT, KC_LGUI, LT(LOWER, KC_ENT),  LT(RAISE, KC_SPC), LOWER, RAISE, ADJUST
+    KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,      KC_T,              KC_Y,      KC_U,     KC_I,     KC_O,     KC_P,     KC_BSPC,
+    KC_GESC,  KC_A,     KC_S,     KC_D,     KC_F,      KC_G,              KC_H,      KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,
+    KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,      KC_B,              KC_N,      KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  RSFT_T(KC_ENT),
+                        KC_LCTL,  KC_LALT,  KC_LGUI,   LT_ENT,            LT_SPC,    LOWER,    RAISE,    ADJUST
   ),
 
   [_LOWER] = LAYOUT_unicorne(
@@ -50,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RGB_VAI,   RGB_SAI, RGB_HUI,  RGB_MOD,  RESET,     RGB_TOG,            XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
     RGB_VAD,   RGB_SAD, RGB_HUD,  RGB_RMOD, XXXXXXX,   XXXXXXX,            XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,
     KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,     KC_F6,              KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,
-                        _______,  _______,  _______,   _______,            _______,  KC_VOLD,   KC_VOLU,  KC_MUTE
+                        _______,  _______,  _______,   _______,            _______,  KC_VOLD,  KC_VOLU,  KC_MUTE
   ),
 };
 
