@@ -1,0 +1,4 @@
+#define TAPPING_TOGGLE 1
+
+#undef DEBOUNCE
+#define DEBOUNCE 8
