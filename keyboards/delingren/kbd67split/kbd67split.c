@@ -1,4 +1,5 @@
-#include "rev2.h"
+#include "kbd67split.h"
+
 void matrix_init_kb(void) {
     setPinOutput(D4);
     matrix_init_user();
