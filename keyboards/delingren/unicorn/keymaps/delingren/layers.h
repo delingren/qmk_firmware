@@ -21,4 +21,5 @@ enum layer_names {
     _LOWER,
     _RAISE,
     _ADJUST,
+    _NUM,
 };
