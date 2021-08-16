@@ -73,6 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 void keyboard_post_init_user(void) { 
   rgblight_sethsv(HSV_BLUE); 
+  rgblight_mode(RGBLIGHT_MODE_BREATHING);
 }
 
 layer_state_t layer_state_set_user(layer_state_t state) {
