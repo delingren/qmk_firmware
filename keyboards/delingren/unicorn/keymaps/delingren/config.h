@@ -17,7 +17,10 @@
 #pragma once
 
 #define OLED_FONT_H "keyboards/delingren/unicorn/keymaps/delingren/glcdfont.c"
-#define ENCODER_RESOLUTION 4
+#define OLED_FONT_WIDTH 8
+#define OLED_FONT_START 0x80
+#define OLED_FONT_END 0xaf
+
 #define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_BREATHING
 
 #define TAPPING_TERM 200

@@ -1,10 +1,10 @@
-BOOTMAGIC_ENABLE = no       # Virtual DIP switch configuration
+BOOTMAGIC_ENABLE = lite      # Virtual DIP switch configuration
 EXTRAKEY_ENABLE = yes       # Audio control and System control
-MOUSEKEY_ENABLE = yes       # Mouse keys
-NKRO_ENABLE = yes            # Nkey Rollover - if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
+MOUSEKEY_ENABLE = no        # Mouse keys
+NKRO_ENABLE = no            # Nkey Rollover - if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
 COMMAND_ENABLE = no         # Commands for debug and configuration
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
-ENCODER_ENABLE = yes        # Enable rotary encoder support
+ENCODER_ENABLE = no         # Enable rotary encoder support
 AUDIO_ENABLE = yes          # Audio output
 
 OLED_DRIVER_ENABLE = yes
@@ -17,6 +17,5 @@ RGB_MATRIX_DRIVER = WS2812
 # colors flickering.
 RGBLIGHT_ENABLE = yes # Enable keyboard RGB underglow
 RGB_MATRIX_ENABLE = no
-
 
 DEFAULT_FOLDER = delingren/unicorn/f411
