@@ -5,7 +5,7 @@ NKRO_ENABLE = no            # Nkey Rollover - if this doesn't work, see here: ht
 COMMAND_ENABLE = no         # Commands for debug and configuration
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 ENCODER_ENABLE = no         # Enable rotary encoder support
-AUDIO_ENABLE = yes          # Audio output
+AUDIO_ENABLE = no           # Audio output
 
 OLED_DRIVER_ENABLE = yes
 WS2812_DRIVER = pwm
