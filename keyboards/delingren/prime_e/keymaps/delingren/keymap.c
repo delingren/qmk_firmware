@@ -19,15 +19,12 @@ enum layer_names {
   _BASE,
   _LOWER,
   _RAISE,
-  _NUM,
   _ADJUST,
 };
 
 #define LOWER  MO(_LOWER)
 #define RAISE  MO(_RAISE)
 #define ADJUST MO(_ADJUST)
-#define TG_NUM TG(_NUM)
-#define MO_NUM MO(_NUM)
 
 #define LT_ENT LT(LOWER, KC_ENT)
 #define LT_SPC LT(RAISE, KC_SPC)
