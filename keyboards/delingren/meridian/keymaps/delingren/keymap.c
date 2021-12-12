@@ -78,28 +78,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
-void keyboard_pre_init_user(void) {
-	rgblight_setrgb_at(255, 0, 0, 0); // [..., 0] = top LED
-	rgblight_setrgb_at(0, 255, 0, 1); // [..., 1] = middle LED
-	rgblight_setrgb_at(0, 0, 255, 2); // [..., 2] = bottom LED
+void keyboard_post_init_user(void) {
+	rgblight_setrgb_at(0, 0, 0, 0); // [..., 0] = top LED
+    rgblight_setrgb_at(0, 0, 0, 1); // [..., 1] = middle LED
+    rgblight_setrgb_at(0, 0, 0, 2); // [..., 2] = bottom LED
 }
 
 void led_set_user(uint8_t usb_led) {
-  if (IS_LAYER_ON(1)) {
-    // writePinHigh(B2);
+  if (IS_LED_ON(usb_led, USB_LED_CAPS_LOCK)) {
+    rgblight_setrgb_at(0, 255, 0, 0);
   } else {
-    // writePinLow(B2);
+    rgblight_setrgb_at(0, 0, 0, 0);
+  }
+
+  if (IS_LAYER_ON(1)) {
+  	rgblight_setrgb_at(255, 0, 0, 1);
+  } else {
+  	rgblight_setrgb_at(0, 0, 0, 1);
   }
 
   if (IS_LAYER_ON(2)) {
-    // writePinHigh(B3);
+  	rgblight_setrgb_at(0, 0, 255, 2);
   } else {
-    // writePinLow(B3);j
+    rgblight_setrgb_at(0, 0, 0, 2);	
   }
     
-  if (IS_LED_ON(usb_led, USB_LED_CAPS_LOCK)) {
-    // writePinHigh(B1);
-  } else {
-    // writePinLow(B1);
-  }
+  
 }
