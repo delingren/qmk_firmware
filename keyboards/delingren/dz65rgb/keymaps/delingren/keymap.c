@@ -21,3 +21,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, _______, KC_VOLD, KC_VOLU, KC_MUTE, _______,          KC_PGUP, _______, \
     _______, _______, _______,                            _______,                   _______, _______         , KC_HOME, KC_PGDN, KC_END),
 };
+
+void rgb_matrix_indicators_user(void)
+{
+    if (host_keyboard_led_state().caps_lock)
+    {
+        rgb_matrix_set_color(30, 0xFF, 0xFF, 0xFF);
+    }
+}
