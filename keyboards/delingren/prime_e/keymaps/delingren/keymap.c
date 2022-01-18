@@ -26,6 +26,7 @@ enum layer_names {
 #define LOWER  MO(_LOWER)
 #define RAISE  MO(_RAISE)
 #define ADJUST MO(_ADJUST)
+#define NUM    TG(_NUM)
 
 #define LT_ENT LT(LOWER, KC_ENT)
 #define LT_SPC LT(RAISE, KC_SPC)
@@ -36,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   	KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,       KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC, KC_DEL,
   	KC_GESC, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,       KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
   	KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,       KC_ESC,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-  	KC_LCTL, KC_LALT,          KC_LGUI,          LT_ENT,     LT_SPC,           KC_RGUI,          KC_RALT, KC_RCTL
+  	KC_LCTL, KC_LALT,          KC_LGUI,          LT_ENT,     LT_SPC,           LOWER,            RAISE,   NUM
   ),
 
   [_LOWER] = LAYOUT(
@@ -58,6 +59,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, KC_VOLD, KC_VOLU, KC_MUTE, XXXXXXX,
     _______, _______,          _______,          _______,    _______,          _______,          _______, _______
   ),
+  [_NUM] = LAYOUT(
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_P7,   KC_P8,   KC_P9,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    KC_P4,   KC_P5,   KC_P6,   XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, KC_P1,   KC_P2,   KC_P3,   XXXXXXX, XXXXXXX, XXXXXXX,
+    XXXXXXX, XXXXXXX,          XXXXXXX,          XXXXXXX,    KC_P0,            KC_PDOT,          XXXXXXX, NUM
+  ),
 };
 
 #ifdef RGBLIGHT_ENABLE
@@ -76,16 +83,16 @@ void matrix_init_user(void) {
 }
 
 void led_set_user(uint8_t usb_led) {
-  if (IS_LAYER_ON(1)) {
-    writePinHigh(B2);
-  } else {
-    writePinLow(B2);
-  }
-
-  if (IS_LAYER_ON(2)) {
+  if (IS_LAYER_ON(_LOWER) || IS_LAYER_ON(_RAISE)) {
     writePinHigh(B3);
   } else {
     writePinLow(B3);
+  }
+
+  if (IS_LAYER_ON(_NUM)) {
+    writePinHigh(B2);
+  } else {
+    writePinLow(B2);
   }
     
   if (IS_LED_ON(usb_led, USB_LED_CAPS_LOCK)) {
