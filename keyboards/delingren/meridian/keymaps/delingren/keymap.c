@@ -80,8 +80,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 void keyboard_post_init_user(void) {
 	rgblight_setrgb_at(0, 0, 0, 0); // [..., 0] = top LED
-    rgblight_setrgb_at(0, 0, 0, 1); // [..., 1] = middle LED
-    rgblight_setrgb_at(0, 0, 0, 2); // [..., 2] = bottom LED
+  rgblight_setrgb_at(0, 0, 0, 1); // [..., 1] = middle LED
+  rgblight_setrgb_at(0, 0, 0, 2); // [..., 2] = bottom LED
 }
 
 void led_set_user(uint8_t usb_led) {
