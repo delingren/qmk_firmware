@@ -1,8 +1,7 @@
 VIA_ENABLE = yes
 LTO_ENABLE = yes
 
-MOUSEKEY_ENABLE = no       # Mouse keys
+MOUSEKEY_ENABLE = no
 NKRO_ENABLE = no
 BACKLIGHT_ENABLE = no
 RGBLIGHT_ENABLE = no
-
