@@ -1,4 +1,4 @@
-BOOTMAGIC_ENABLE = lite      # Virtual DIP switch configuration
+BOOTMAGIC_ENABLE = yes      # Virtual DIP switch configuration
 EXTRAKEY_ENABLE = yes       # Audio control and System control
 MOUSEKEY_ENABLE = no        # Mouse keys
 NKRO_ENABLE = no            # Nkey Rollover - if this doesn't work, see here: https://github.com/tmk/tmk_keyboard/wiki/FAQ#nkro-doesnt-work
@@ -7,7 +7,9 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 ENCODER_ENABLE = no         # Enable rotary encoder support
 AUDIO_ENABLE = no           # Audio output
 
-OLED_DRIVER_ENABLE = yes
+OLED_ENABLE = yes
+OLED_DRIVER = SSD1306
+
 WS2812_DRIVER = pwm
 AUDIO_DRIVER = pwm_hardware
 
