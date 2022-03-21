@@ -23,7 +23,7 @@ static bool grave_esc_was_shifted = false;
 bool process_grave_esc(uint16_t keycode, keyrecord_t *record) {
     if (keycode == GRAVE_ESC) {
         const uint8_t mods    = get_mods();
-        uint8_t       shifted = mods & MOD_MASK_SG;
+        uint8_t       shifted = mods & MOD_MASK_SAG;
 
 #ifdef GRAVE_ESC_ALT_OVERRIDE
         // if ALT is pressed, ESC is always sent
