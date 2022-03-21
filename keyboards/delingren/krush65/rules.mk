@@ -17,4 +17,4 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = yes       # Enable keyboard RGB underglow
 ENCODER_ENABLE = yes
 
-LAYOUTS = 65_ansi_blocker 65_ansi_blocker_split_bs 65_ansi_blocker_split_sp
+LAYOUTS = 65_ansi_blocker 65_ansi_blocker_split_bs
