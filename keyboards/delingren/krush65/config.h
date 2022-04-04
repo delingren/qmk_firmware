@@ -19,35 +19,32 @@
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0x5350
-#define PRODUCT_ID      0x6B31
+#define PRODUCT_ID      0x5B31
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    SawnsProjects
-#define PRODUCT         Krush65 - Solder
+#define PRODUCT         Krush65 - Hot Swap
 
 /* key matrix size */
-#define MATRIX_ROWS 10
-#define MATRIX_COLS 8
+#define MATRIX_ROWS 5
+#define MATRIX_COLS 16
 
 /* key matrix pins */
-#define MATRIX_ROW_PINS { B1, B2, D1, D2, D4, D6, F6, F7, F5, F4 }
-#define MATRIX_COL_PINS { C7, C6, B6, B5, B4, D7, D5, D3 }
+#define MATRIX_ROW_PINS { B1, B2, D4, F1, F0 }
+#define MATRIX_COL_PINS { B7, B3, F4, F5, F6, F7, C7, C6, B6, B5, B4, D7, D0, D5, D6, D3 }
 #define UNUSED_PINS
-
-/* indicator */
-//  #define LED_CAPS_LOCK_PIN F0
 
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 /* Caps Lock */
-#define LED_CAPS_LOCK_PIN F0
+#define LED_CAPS_LOCK_PIN B0
 #define LED_PIN_ON_STATE 0
 
 /* rotary */
-#define ENCODERS_PAD_A { D0 }
-#define ENCODERS_PAD_B { B3 }
+#define ENCODERS_PAD_A { D2 }
+#define ENCODERS_PAD_B { D1 }
 #define ENCODER_RESOLUTION 4
 
-#define RGB_DI_PIN F1
+#define RGB_DI_PIN E6
 #ifdef RGB_DI_PIN
     #define RGBLED_NUM 20
     #define RGBLIGHT_HUE_STEP 8
