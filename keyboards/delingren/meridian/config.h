@@ -21,8 +21,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VENDOR_ID       0x5052
 #define PRODUCT_ID      0x004D
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    Prime Keyboards
-#define PRODUCT         Meridian
+#define MANUFACTURER    "Prime Keyboards"
+#define PRODUCT         "Meridian"
 
 /* key matrix size */
 #define MATRIX_ROWS 5

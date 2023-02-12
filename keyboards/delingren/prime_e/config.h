@@ -21,11 +21,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0x5052
-#define MANUFACTURER    PrimeKB
+#define MANUFACTURER    "PrimeKB"
 
 #define PRODUCT_ID      0x0051
 #define DEVICE_VER      0x0001
-#define PRODUCT         Prime_E
+#define PRODUCT         "Prime_E"
 
 /* key matrix size */
 #define MATRIX_ROWS 4

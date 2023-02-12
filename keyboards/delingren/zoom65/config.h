@@ -22,8 +22,8 @@
 #define VENDOR_ID       0x806B
 #define PRODUCT_ID      0x0004
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    meletrix
-#define PRODUCT         zoom65
+#define MANUFACTURER    "meletrix"
+#define PRODUCT         "zoom65"
 
 /* key matrix size */
 #define MATRIX_ROWS 5
