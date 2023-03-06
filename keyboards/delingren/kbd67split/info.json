@@ -22,7 +22,11 @@
         "pid": "0x6067",
         "device_version": "0.0.2"
     },
-    "debounce": "8",
+    "indicators": {
+        "caps_lock": "D4",
+        "on_state": 0
+    },
+    "debounce": 8,
 
     "layouts": {
         "LAYOUT_ansi_split_space": {

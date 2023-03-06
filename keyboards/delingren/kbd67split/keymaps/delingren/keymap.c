@@ -42,12 +42,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, _______, _______, _______, _______, _______, _______, _______, KC_VOLD, KC_VOLU, KC_MUTE, _______,          KC_PGUP, KC_PGDN, \
   _______, _______, _______,          KC_ENT,  _______, KC_SPC,                    _______, _______, _______, KC_HOME, KC_PGDN, KC_END   ),
 };
-
-void matrix_init_user(void) {
-    setPinOutput(D4);
-}
-
-bool led_update_user(led_t led_state) {
-    writePin(D4, !led_state.caps_lock);
-    return false;
-}
