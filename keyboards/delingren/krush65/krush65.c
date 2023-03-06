@@ -17,6 +17,7 @@
 #include "krush65.h"
 #include "encoder_actions.h"
 
+#ifdef ENCODER_ENABLE
    /*  Custom encoder control - handles CW/CCW turning of encoder
      *  Default behavior:
      *    main layer:
@@ -51,3 +52,4 @@ bool encoder_update_kb(uint8_t index, bool clockwise) {
     }
     return true;
 }
+#endif
