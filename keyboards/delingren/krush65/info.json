@@ -2,7 +2,6 @@
     "keyboard_name": "Krush65",
     "manufacturer": "SawnsProjects",
     "maintainer": "qmk",
-    "url": "",
     "bootloader": "atmel-dfu",
     "diode_direction": "COL2ROW",
     "features": {
@@ -11,13 +10,14 @@
       "mousekey": true,
       "rgblight": false,
       "rgb_matrix": false,
-      "encoder": false
+      "encoder": true
     },
     "matrix_pins": {
         "cols": ["B7", "B3", "F4", "F5", "F6", "F7", "C7", "C6", "B6", "B5", "B4", "D7", "D0", "D5", "D6", "D3"],
         "rows": ["B1", "B2", "D4", "F1", "F0"]
     },
     "processor": "atmega32u4",
+    "url": "",
     "usb": {
         "vid": "0x5350",
         "pid": "0x5B31",
@@ -29,7 +29,7 @@
     },
     "encoder": {
         "rotary": [
-            { "pin_a": "D2", "pin_b": "D1", "resolution": 4 }
+            { "pin_a": "D1", "pin_b": "D2", "resolution": 4 }
         ]
     },
     "rgblight": {
