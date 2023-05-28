@@ -1,0 +1,42 @@
+{
+    "keyboard_name": "guspad",
+    "manufacturer": "breeze",
+    "maintainer": "delingren",
+    "diode_direction": "COL2ROW",
+    "features": {
+      "bootmagic": true,
+      "via": true,
+      "extrakey": true,
+      "encoder": true
+    },
+    "usb": {
+        "vid": "0x239A",
+        "pid": "0x0108",
+        "device_version": "0.0.1"
+    },
+    "matrix_pins": {
+        "rows": ["GP7", "GP4", "GP2"],
+        "cols": ["GP6", "GP27", "GP26"]
+    },
+    "encoder": {
+        "rotary": [
+            { "pin_a": "GP28", "pin_b": "GP29", "resolution": 4 }
+        ]
+    },
+    "layouts": {
+        "LAYOUT_default": {
+            "layout": [
+                {"matrix": [0, 0], "x":0, "y":0},
+                {"matrix": [0, 1], "x":1, "y":0},
+               
+                {"matrix": [1, 0], "x":0, "y":1},
+                {"matrix": [1, 1], "x":1, "y":1},
+                {"matrix": [1, 2], "x":2, "y":1},
+               
+                {"matrix": [2, 0], "x":0, "y":2},
+                {"matrix": [2, 1], "x":1, "y":2},
+                {"matrix": [2, 2], "x":2, "y":2}
+            ]
+        }
+    }
+}
