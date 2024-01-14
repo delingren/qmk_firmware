@@ -15,6 +15,9 @@
         "pid": "0x6882",
         "device_version": "0.0.1"
     },
+    "features": {
+        "extrakey": true,
+    },
     "indicators": {
     },
     "layouts": {
