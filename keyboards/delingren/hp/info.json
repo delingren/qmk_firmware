@@ -5,8 +5,12 @@
     "bootloader": "atmel-dfu",
     "diode_direction": "COL2ROW",
     "matrix_pins": {
-        "cols": ["B7", "D5", "C7", "F0", "B6", "B3", "B1", "F5"],
-        "rows": ["F1", "B2", "F7", "F6", "F4", "B0", "B5", "D7", "E6", "C6", "D0", "D4", "D2", "D1", "B4"]
+        "cols": ["D3", "D2", "D1", "D4", "C6", "E6", "B4", "D5"],
+        "rows": ["B7", "D7", "B5", "D0", "F1", "F0", "B2", "B3", "B1", "F7", "F6", "F5", "F4", "B0", "B6"]
+    },
+    "indicators": {
+        "caps_lock": "C7",
+        "on_state": 1
     },
     "processor": "atmega32u4",
     "url": "",
@@ -17,13 +21,12 @@
     },
     "features": {
         "extrakey": true,
-    },
-    "indicators": {
+        "bootmagic": true,
     },
     "layouts": {
         "LAYOUT_ansi": {
             "layout": [
-                {"matrix": [3, 0], "x": 0, "y": 0, "label": "ESC"},
+                {"matrix": [0, 0], "x": 0, "y": 0, "label": "ESC"},
                 {"matrix": [4, 7], "x": 0, "y": 0, "label": "F1"},
                 {"matrix": [4, 6], "x": 0, "y": 0, "label": "F2"},
                 {"matrix": [4, 5], "x": 0, "y": 0, "label": "F3"},
@@ -40,8 +43,8 @@
                 {"matrix": [10, 7], "x": 0, "y": 0, "label": "PrtSc"},
                 {"matrix": [13, 7], "x": 0, "y": 0, "label": "Del"},
 
-                {"matrix": [3, 6], "x": 0, "y": 0, "label": "`"},
-                {"matrix": [3, 2], "x": 0, "y": 0, "label": "1"},
+                {"matrix": [0, 6], "x": 0, "y": 0, "label": "`"},
+                {"matrix": [0, 2], "x": 0, "y": 0, "label": "1"},
                 {"matrix": [2, 2], "x": 0, "y": 0, "label": "2"},
                 {"matrix": [4, 2], "x": 0, "y": 0, "label": "3"},
                 {"matrix": [5, 2], "x": 0, "y": 0, "label": "4"},
@@ -56,8 +59,8 @@
                 {"matrix": [10, 0], "x": 0, "y": 0, "label": "Backspace"},
                 {"matrix": [13, 5], "x": 0, "y": 0, "label": "Home"},
 
-                {"matrix": [3, 5], "x": 0, "y": 0, "label": "Tab"},
-                {"matrix": [3, 1], "x": 0, "y": 0, "label": "Q"},
+                {"matrix": [0, 5], "x": 0, "y": 0, "label": "Tab"},
+                {"matrix": [0, 1], "x": 0, "y": 0, "label": "Q"},
                 {"matrix": [2, 1], "x": 0, "y": 0, "label": "W"},
                 {"matrix": [4, 1], "x": 0, "y": 0, "label": "E"},
                 {"matrix": [5, 1], "x": 0, "y": 0, "label": "R"},
@@ -73,8 +76,8 @@
                 {"matrix": [13, 6], "x": 0, "y": 0, "label": "PgUp"},
 
                 
-                {"matrix": [3, 7], "x": 0, "y": 0, "label": "Caps"},
-                {"matrix": [3, 3], "x": 0, "y": 0, "label": "A"},
+                {"matrix": [0, 7], "x": 0, "y": 0, "label": "Caps"},
+                {"matrix": [0, 3], "x": 0, "y": 0, "label": "A"},
                 {"matrix": [2, 3], "x": 0, "y": 0, "label": "S"},
                 {"matrix": [4, 3], "x": 0, "y": 0, "label": "D"},
                 {"matrix": [5, 3], "x": 0, "y": 0, "label": "F"},
@@ -88,8 +91,8 @@
                 {"matrix": [10, 3], "x": 0, "y": 0, "label": "Enter"},
                 {"matrix": [13, 3], "x": 0, "y": 0, "label": "PgDn"},
                 
-                {"matrix": [0, 4], "x": 0, "y": 0, "label": "L Shift"},
-                {"matrix": [3, 4], "x": 0, "y": 0, "label": "Z"},
+                {"matrix": [3, 4], "x": 0, "y": 0, "label": "L Shift"},
+                {"matrix": [0, 4], "x": 0, "y": 0, "label": "Z"},
                 {"matrix": [2, 4], "x": 0, "y": 0, "label": "X"},                
                 {"matrix": [4, 4], "x": 0, "y": 0, "label": "C"},
                 {"matrix": [5, 4], "x": 0, "y": 0, "label": "V"},
@@ -99,7 +102,7 @@
                 {"matrix": [7, 4], "x": 0, "y": 0, "label": ","},
                 {"matrix": [11, 4], "x": 0, "y": 0, "label": "."},
                 {"matrix": [12, 4], "x": 0, "y": 0, "label": "/"},
-                {"matrix": [0, 1], "x": 0, "y": 0, "label": "R Shift"},
+                {"matrix": [3, 1], "x": 0, "y": 0, "label": "R Shift"},
                 {"matrix": [13, 4], "x": 0, "y": 0, "label": "End"},
                 
                 {"matrix": [1, 5], "x": 0, "y": 0, "label": "L Ctrl"},
