@@ -1,0 +1,29 @@
+{
+    "keyboard_name": "Mouse",
+    "manufacturer": "DIY",
+    "maintainer": "delingren",
+    "bootloader": "caterina",
+    "processor": "atmega32u4",
+    "diode_direction": "COL2ROW",
+    "matrix_pins": {
+        "rows": ["B5"],
+        "cols": ["B6"]
+    },
+    "usb": {
+        "vid": "0xFFFF",
+        "pid": "0x0002",
+        "device_version": "1.0.0"
+    },
+    "features": {
+        "extrakey": true,
+        "mousekey": true,
+        "bootmagic": true
+    },
+    "layouts": {
+        "LAYOUT_mono": {
+            "layout": [
+                {"label":"Mute", "matrix": [0, 0], "x":0, "y":0}
+            ]
+        }
+    }
+}
