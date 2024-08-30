@@ -1,0 +1,59 @@
+{
+    "keyboard_name": "Mouse",
+    "manufacturer": "DIY",
+    "maintainer": "delingren",
+    
+    // Teensy
+    // "processor": "atmega32u4",
+    // "bootloader": "halfkay",
+    
+    // ProMicro
+    // "processor": "atmega32u4",
+    // "bootloader": "caterina",
+
+    // Pi Pico and RP2040 Zero
+    "bootloader": "rp2040",
+    "processor": "RP2040",
+
+    "diode_direction": "COL2ROW",
+    "matrix_pins": {
+        // ATMega32U4
+        // "rows": ["B1"],
+        // "cols": ["B2"]
+
+        // RP2040
+        "rows": ["GP1"],
+        "cols": ["GP2"]
+    },
+    "ps2": {
+        "enabled": true,
+        "mouse_enabled": true,
+
+        // Teensy and ProMicro
+        // "clock_pin": "D2",
+        // "data_pin": "D3",
+        // "driver": "interrupt"
+
+        // Pi Pico and RP2040 Zero
+        "clock_pin": "GP1",
+        "data_pin": "GP0",
+        "driver": "vendor"
+    },
+    "usb": {
+        "vid": "0xFFFF",
+        "pid": "0x0003",
+        "device_version": "1.0.0"
+    },
+    "features": {
+        "extrakey": true,
+        "mousekey": true,
+        "bootmagic": true
+    },
+    "layouts": {
+        "LAYOUT_mono": {
+            "layout": [
+                {"label":"Mute", "matrix": [0, 0], "x":0, "y":0}
+            ]
+        }
+    }
+}
