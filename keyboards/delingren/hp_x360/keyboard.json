@@ -1,7 +1,7 @@
 {
-    "keyboard_name": "HP Laptop",
+    "keyboard_name": "Pavilion x360",
     "manufacturer": "HP",
-    "maintainer": "qmk",
+    "maintainer": "delingren",
     "bootloader": "atmel-dfu",
     "diode_direction": "COL2ROW",
     "matrix_pins": {
