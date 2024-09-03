@@ -2,16 +2,28 @@
     "keyboard_name": "ThinkPad X1",
     "manufacturer": "Lenovo",
     "maintainer": "delingren",
-    "bootloader": "rp2040",
-    "processor": "RP2040",
+    "processor": "STM32F405",
+    "bootloader": "stm32-dfu",
     "diode_direction": "COL2ROW",
     "matrix_pins": {
-        "rows": ["GP8", "GP5", "GP6", "GP0", "GP3", "GP4", "GP27", "GP26", "GP1", "GP28", "GP20", "GP18", "GP21", "GP14", "GP22", "GP2", "GP13"],
-        "cols": ["GP19", "GP7", "GP11", "GP16", "GP17", "GP9", "GP10", "GP15", "GP12"]
+        "rows": ["B0", "B1", "B2", "B3", "B4", "B5", "B6", "B7", "B8", "B9", "B10", "B11", "B12", "B13", "B14", "B15", "A15"],
+        "cols": ["A0", "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8"]
     },
     "indicators": {
-        "caps_lock": "GP25",
-        "on_state": 1
+        "caps_lock": "A9",
+        "on_state": 0
+    },
+    "backlight": {
+        "pin": "C7",
+        "levels": 5,
+        "breathing": true
+    },
+    "ps2": {
+        "enabled": true,
+        "mouse_enabled": true,
+        "clock_pin": "C0",
+        "data_pin": "C1",
+        "driver": "interrupt"
     },
     "url": "",
     "usb": {
