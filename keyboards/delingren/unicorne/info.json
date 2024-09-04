@@ -9,12 +9,12 @@
     "device_version": "0.0.1"
   },
   "features": {
-    "audio": true,
-    "bootmagic": false,
-    "encoder": true,
+    "audio": false,
+    "bootmagic": true,
+    "encoder": false,
     "extrakey": true,
-    "mousekey": true,
-    "nkro": true,
+    "mousekey": false,
+    "nkro": false,
     "oled": true,
     "rgblight": true
   },

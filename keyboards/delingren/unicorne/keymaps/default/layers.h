@@ -20,5 +20,6 @@ enum layer_names {
     _BASE,
     _LOWER,
     _RAISE,
+    _NUM,
     _ADJUST,
 };

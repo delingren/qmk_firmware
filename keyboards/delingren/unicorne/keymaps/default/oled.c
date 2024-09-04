@@ -17,51 +17,156 @@
 #    include QMK_KEYBOARD_H
 #    include "layers.h"
 
-// Some characters position:
-// alt: 84 85 86/a..../c...
-// shift:87 88 89/a.../c...
-// ctrl: b6 b6/d.../
-// capslock: 9c-9f/b.../d...
-// numlock: 98-9b/b.../d...
-// navigation logo: 92-95/b2.../d2...
-// symbol logo: 8a-8d/aa..../ca....
-// qmk logos; 8e-91/ae..../ce....
-void oled_render_layer(void) {
-    /* static const char PROGMEM cmd_logo[] = { */
-    /*   0x80, 0x81, 0x82, 0x83, 10, */
-    /*   0xa0, 0xa1, 0xa2, 0xa3, 10, */
-    /*   0xc0, 0xc1, 0xc2, 0xc3, 10, */
-    /*   0}; */
-    // clang-format off
-    static const char PROGMEM numlock_logo[] = {
-      0x98, 0x99, 0x9a, 0x9b, 10,
-      0xb8, 0xb9, 0xba, 0xbb, 10,
-      0xd8, 0xd9, 0xda, 0xdb, 10, 0};
-    static const char PROGMEM symbol_logo[] = {
-      0x8a, 0x8b, 0x8c, 0x8d, 10,
-      0xaa, 0xab, 0xac, 0xad, 10,
-      0xca, 0xcb, 0xcc, 0xcd, 10, 0};
-    static const char PROGMEM qmk_logo[] = {
-      0x8e, 0x8f, 0x90, 0x91, 10,
-      0xae, 0xaf, 0xb0, 0xb1, 10,
-      0xce, 0xcf, 0xd0, 0xd1, 10, 0};
-    // clang-format on
-    if (IS_LAYER_ON(_LOWER)) {
-        oled_write_P(symbol_logo, false);
-    } else if (IS_LAYER_ON(_RAISE)) {
-        oled_write_P(numlock_logo, false);
-    } else if (IS_LAYER_ON(_BASE)) {
-        oled_write_P(qmk_logo, false);
+static bool caps_lock_on = false;
+
+bool oled_task_user(void) {
+    static const char PROGMEM hr[] = {
+        0x81, 0x81, 0x81, 0x81, 
+        0x00,
+    };
+
+    static const char PROGMEM logo[] = {
+        0x80, 0x84, 0x85, 0x80,
+        0x80, 0x86, 0x87, 0x80,
+        0x00,
+    };
+
+    static const char PROGMEM empty [] = {
+        0x80, 0x80, 0x80, 0x80,
+        0x80, 0x80, 0x80, 0x80,
+        0x00,
+    };
+
+    static const char PROGMEM layer0[] = {
+        0x90, 0x91, 0x80, 0x80,
+        0x92, 0x93, 0x80, 0x80,
+        0x00,
+    }; 
+
+    static const char PROGMEM layer1[] = {
+        0x80, 0x80, 0x94, 0x95, 
+        0x80, 0x80, 0x96, 0x97, 
+        0x00,
+    }; 
+
+    static const char PROGMEM layer01[] = {
+        0x90, 0x91, 0x94, 0x95, 
+        0x92, 0x93, 0x96, 0x97, 
+        0x00,
+    }; 
+
+    static const char PROGMEM layer2[] = {
+        0x98, 0x99, 0x80, 0x80,
+        0x9a, 0x9b, 0x80, 0x80,
+        0x00,
+    }; 
+
+    static const char PROGMEM layer3[] = {
+        0x80, 0x80, 0x9c, 0x9d, 
+        0x80, 0x80, 0x9e, 0x9f, 
+        0x00,
+    }; 
+
+    static const char PROGMEM layer23[] = {
+        0x98, 0x99, 0x9c, 0x9d, 
+        0x9a, 0x9b, 0x9e, 0x9f, 
+        0x00,
+    }; 
+
+    static const char PROGMEM mod0[] = {
+        0xa0, 0xa1, 0x80, 0x80,
+        0xa2, 0xa3, 0x80, 0x80,
+        0x00,
+    }; 
+
+    static const char PROGMEM mod1[] = {
+        0x80, 0x80, 0xa4, 0xa5, 
+        0x80, 0x80, 0xa6, 0xa7, 
+        0x00,
+    }; 
+
+    static const char PROGMEM mod01[] = {
+        0xa0, 0xa1, 0xa4, 0xa5, 
+        0xa2, 0xa3, 0xa6, 0xa7, 
+        0x00,
+    }; 
+
+    static const char PROGMEM mod2[] = {
+        0xa8, 0xa9, 0x80, 0x80,
+        0xaa, 0xab, 0x80, 0x80,
+        0x00,
+    }; 
+
+    static const char PROGMEM mod3[] = {
+        0x80, 0x80, 0xac, 0xad, 
+        0x80, 0x80, 0xae, 0xaf, 
+        0x00,
+    }; 
+
+    static const char PROGMEM mod23[] = {
+        0xa8, 0xa9, 0xac, 0xad, 
+        0xaa, 0xab, 0xae, 0xaf, 
+        0x00,
+    }; 
+
+    static const char PROGMEM capslock[] = {
+        0x80, 0x88, 0x89, 0x80,
+        0x80, 0x8a, 0x8b, 0x80,
+        0x00,
+    };
+
+    oled_write_P(logo, false);
+    oled_write_P(hr, false);
+
+    bool layer0_on = IS_LAYER_ON(_BASE);
+    bool layer1_on = IS_LAYER_ON(_LOWER);
+    bool layer2_on = IS_LAYER_ON(_RAISE);
+    bool layer3_on = IS_LAYER_ON(_NUM);
+
+    // we are not doing one shot mods here
+    static uint8_t mods;
+    mods = get_mods();
+    bool mod0_on = mods & MOD_MASK_CTRL;
+    bool mod1_on = mods & MOD_MASK_SHIFT;
+    bool mod2_on = mods & MOD_MASK_ALT;
+    bool mod3_on = mods & MOD_MASK_GUI;
+
+    if (layer0_on) {
+        oled_write_P(layer1_on ? layer01 : layer0, false);
     } else {
-        if (IS_LAYER_ON(_ADJUST)) {
-            oled_write_ln("ADJ", false);
-        } else {
-            oled_write_ln("?????", false);
-        }
-        oled_write_ln(" ", false);
-        oled_write_ln(" ", false);
-        oled_write_ln(" ", false);
+        oled_write_P(layer1_on ? layer1 : empty, false);
     }
+
+    if (layer2_on) {
+        oled_write_P(layer3_on ? layer23 : layer2, false);
+    } else {
+        oled_write_P(layer3_on ? layer3 : empty, false);
+    }
+
+    oled_write_P(hr, false);
+
+    if (mod0_on) {
+        oled_write_P(mod1_on ? mod01 : mod0, false);
+    } else {
+        oled_write_P(mod1_on ? mod1 : empty, false);
+    }
+
+    if (mod2_on) {
+        oled_write_P(mod3_on ? mod23 : mod2, false);
+    } else {
+        oled_write_P(mod3_on ? mod3 : empty, false);
+    }
+
+    oled_write_P(hr, false);
+    oled_write_P(caps_lock_on ? capslock : empty, false);
+
+    // Tell oled_task_kb to stop proceeding
+    return false;
+}
+
+bool led_update_user(led_t led_state) {
+    caps_lock_on = led_state.caps_lock;
+    return true;
 }
 
 #endif
