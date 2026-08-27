@@ -1,8 +1,8 @@
 {
-    "keyboard_name": "ThinkPad x390-g474",
+    "keyboard_name": "ThinkPad X390",
     "manufacturer": "Lenovo",
     "maintainer": "delingren",
-    "processor": "STM32G474",
+    "processor": "STM32G431",
     "bootloader": "stm32-dfu",
     "diode_direction": "COL2ROW",
     "matrix_pins": {
