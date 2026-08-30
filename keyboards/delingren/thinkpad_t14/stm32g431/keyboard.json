@@ -1,21 +1,25 @@
 {
-  "keyboard_name": "ThinkPad t14",
+  "keyboard_name": "ThinkPad X390",
   "manufacturer": "Lenovo",
   "maintainer": "delingren",
-  "processor": "RP2040",
-  "bootloader": "rp2040",
+  "processor": "STM32G431",
+  "bootloader": "stm32-dfu",
   "diode_direction": "COL2ROW",
   "matrix_pins": {
-    "rows": ["GP9", "GP6", "GP7", "GP19", "GP17", "GP4", "GP5", 
-             "GP20", "GP2", "GP26", "GP3", "GP22", "GP15", "GP21"],
-    "cols": ["GP18", "GP10", "GP8", "GP14", "GP12", "GP13", "GP16", "GP11"]
+    "rows": ["A5", "C4", "B1", "B5", "C10", "A4", "A6", "B7", "C13",
+             "B14", "A0", "C11", "A15", "B15", "B9", "A2", "A1"],
+    "cols": ["B3", "A7", "A3", "A8", "B2", "A10", "B13", "B0", "A9"]
+  },
+  "indicators": {
+      "caps_lock": "C6",
+      "on_state": 0
   },
   "ps2": {
-    "enabled": true,
-    "mouse_enabled": true,
-    "clock_pin": "GP1",
-    "data_pin": "GP0",
-    "driver": "vendor"
+      "enabled": true,
+      "mouse_enabled": true,
+      "clock_pin": "B10",
+      "data_pin": "B11",
+      "driver": "interrupt"
   },
   "usb": {
     "vid": "0x4445",
@@ -91,7 +95,7 @@
         {"matrix": [7, 0], "x": 0, "y": 0, "label": "'"},
         {"matrix": [8, 7], "x": 0, "y": 0, "label": "ENTER"},
 
-        {"matrix": [12, 4], "x": 0, "y": 0, "label": "L SHIFT"},
+        {"matrix": [13, 4], "x": 0, "y": 0, "label": "L SHIFT"},
         {"matrix": [0, 7], "x": 0, "y": 0, "label": "Z"},
         {"matrix": [1, 7], "x": 0, "y": 0, "label": "X"},
         {"matrix": [2, 7], "x": 0, "y": 0, "label": "C"},
@@ -102,16 +106,16 @@
         {"matrix": [5, 7], "x": 0, "y": 0, "label": ","},
         {"matrix": [6, 7], "x": 0, "y": 0, "label": "."},
         {"matrix": [7, 6], "x": 0, "y": 0, "label": "/"},
-        {"matrix": [12, 7], "x": 0, "y": 0, "label": "R SHIFT"},
+        {"matrix": [13, 7], "x": 0, "y": 0, "label": "R SHIFT"},
 
-        {"matrix": [0, 6], "x": 0, "y": 0, "label": "Fn"},
-        {"matrix": [13, 2], "x": 0, "y": 0, "label": "L CTRL"},
+        {"matrix": [16, 8], "x": 0, "y": 0, "label": "Fn"},
+        {"matrix": [14, 2], "x": 0, "y": 0, "label": "L CTRL"},
         {"matrix": [11, 4], "x": 0, "y": 0, "label": "GUI"},
-        {"matrix": [13, 0], "x": 0, "y": 0, "label": "L ALT"},
+        {"matrix": [15, 0], "x": 0, "y": 0, "label": "L ALT"},
         {"matrix": [8, 6], "x": 0, "y": 0, "label": "SPACE"},
-        {"matrix": [13, 6], "x": 0, "y": 0, "label": "R ALT"},
-        {"matrix": [13, 3], "x": 0, "y": 0, "label": "PrtSc"},
-        {"matrix": [13, 7], "x": 0, "y": 0, "label": "R CTRL"},
+        {"matrix": [15, 6], "x": 0, "y": 0, "label": "R ALT"},
+        {"matrix": [15, 3], "x": 0, "y": 0, "label": "PrtSc"},
+        {"matrix": [14, 7], "x": 0, "y": 0, "label": "R CTRL"},
         {"matrix": [12, 2], "x": 0, "y": 0, "label": "PGUP"},
         {"matrix": [10, 0], "x": 0, "y": 0, "label": "UP"},
         {"matrix": [12, 3], "x": 0, "y": 0, "label": "PGDN"},
