@@ -6,15 +6,19 @@
   "bootloader": "rp2040",
   "diode_direction": "COL2ROW",
   "matrix_pins": {
-    "rows": ["GP9", "GP6", "GP7", "GP19", "GP17", "GP4", "GP5", 
-             "GP20", "GP2", "GP26", "GP3", "GP22", "GP15", "GP21"],
-    "cols": ["GP18", "GP10", "GP8", "GP14", "GP12", "GP13", "GP16", "GP11"]
+    "rows": ["GP5", "GP8", "GP7", "GP15", "GP13", "GP21", "GP26",
+             "GP22", "GP16", "GP17", "GP19", "GP18", "GP10", "GP20"],
+    "cols": ["GP14", "GP4", "GP6", "GP11", "GP2", "GP12", "GP9", "GP3"]
+  },
+  "indicators": {
+    "caps_lock": "GP0",
+    "on_state": 0
   },
   "ps2": {
     "enabled": true,
     "mouse_enabled": true,
-    "clock_pin": "GP1",
-    "data_pin": "GP0",
+    "clock_pin": "GP28",
+    "data_pin": "GP27",
     "driver": "vendor"
   },
   "usb": {
