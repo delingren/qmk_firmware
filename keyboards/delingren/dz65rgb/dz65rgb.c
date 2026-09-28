@@ -14,11 +14,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "quantum.h"
+#include "dz65rgb.h"
 
 #ifdef RGB_MATRIX_ENABLE
-// clang-format off
-const is31_led g_is31_leds[IS31FL3741_LED_COUNT] = {
+
+const is31_led g_is31_leds[DRIVER_LED_TOTAL] = {
     {0, CS21_SW1, CS20_SW1, CS19_SW1},
     {0, CS21_SW2, CS20_SW2, CS19_SW2},
     {0, CS21_SW3, CS20_SW3, CS19_SW3}, 
@@ -111,5 +111,5 @@ led_config_t g_led_config = { {
     1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 1,
     1, 1, 1, 4, 1, 1, 1, 1, 1   
 } };
-// clang-format on
+
 #endif

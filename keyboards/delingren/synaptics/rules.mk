@@ -1,0 +1,11 @@
+MCU = atmega32u4
+BOOTLOADER = caterina
+
+BOOTMAGIC_ENABLE = yes
+MOUSEKEY_ENABLE = yes
+EXTRAKEY_ENABLE = yes
+ENCODER_ENABLE = yes
+
+PS2_MOUSE_ENABLE = yes
+PS2_ENABLE = yes
+PS2_DRIVER = interrupt

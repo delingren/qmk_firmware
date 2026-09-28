@@ -1,0 +1,19 @@
+{
+    "keyboard_name": "Synaptics T1320A",
+    "manufacturer": "Synaptics",
+    "maintainer": "delingren",
+    "bootloader": "caterina",
+    "processor": "atmega32u4",
+    "usb": {
+        "vid": "0xFFFF",
+        "pid": "0x0001",
+        "device_version": "1.0.0"
+    },
+    "layouts": {
+        "LAYOUT_mono": {
+            "layout": [
+                {"label":"Encoder", "matrix": [0, 0], "x":0, "y":0}
+            ]
+        }
+    }
+}
