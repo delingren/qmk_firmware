@@ -1,7 +1,6 @@
 {
     "keyboard_name": "Pavilion x360",
     "manufacturer": "HP",
-    "maintainer": "delingren",
     "bootloader": "halfkay",
     "diode_direction": "COL2ROW",
     "matrix_pins": {
@@ -13,7 +12,6 @@
         "on_state": 1
     },
     "processor": "atmega32u4",
-    "url": "",
     "usb": {
         "vid": "0x7280",
         "pid": "0x6882",
