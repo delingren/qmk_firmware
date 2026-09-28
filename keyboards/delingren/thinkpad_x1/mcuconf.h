@@ -1,0 +1,23 @@
+#pragma once
+
+#include_next <mcuconf.h>
+
+#undef STM32_LSE_ENABLED
+#define STM32_LSE_ENABLED TRUE
+
+#undef STM32_PLLM_VALUE
+#define STM32_PLLM_VALUE 4
+#undef STM32_PLLN_VALUE
+#define STM32_PLLN_VALUE 168
+#undef STM32_PLLP_VALUE
+#define STM32_PLLP_VALUE 2
+#undef STM32_PLLQ_VALUE
+#define STM32_PLLQ_VALUE 7
+
+#undef STM32_PWM_USE_TIM4
+#define STM32_PWM_USE_TIM4 TRUE
+
+#ifdef BACKLIGHT_PWM
+#    undef STM32_PWM_USE_TIM3
+#    define STM32_PWM_USE_TIM3 TRUE
+#endif
