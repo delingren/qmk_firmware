@@ -51,28 +51,23 @@ void keyboard_post_init_user(void) {
     rgblight_setrgb_at(0, 0, 0, 2); // [..., 2] = bottom LED
 }
 
-layer_state_t layer_state_set_user(layer_state_t state) {
-    return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
-}
-
 bool led_update_user(led_t led_state) {
     if (led_state.caps_lock) {
         rgblight_setrgb_at(0, 255, 0, 0);
     } else {
         rgblight_setrgb_at(0, 0, 0, 0);
     }
-
+    
     if (IS_LAYER_ON(_LOWER)) {
         rgblight_setrgb_at(255, 0, 0, 1);
+    } else if (IS_LAYER_ON(_RAISE)) {
+        rgblight_setrgb_at(0, 0, 255, 2);
+    } else if (IS_LAYER_ON(_ADJUST)) {
+        rgblight_setrgb_at(255, 0, 255, 1);
+        rgblight_setrgb_at(255, 0, 255, 2);
     } else {
         rgblight_setrgb_at(0, 0, 0, 1);
-    }
-
-    if (IS_LAYER_ON(_RAISE)) {
-        rgblight_setrgb_at(0, 0, 255, 2);
-    } else {
         rgblight_setrgb_at(0, 0, 0, 2);
     }
-
-    return true;
+    return false;
 }
