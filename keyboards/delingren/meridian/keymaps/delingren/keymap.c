@@ -60,11 +60,13 @@ bool led_update_user(led_t led_state) {
     
     if (IS_LAYER_ON(_LOWER)) {
         rgblight_setrgb_at(255, 0, 0, 1);
+        rgblight_setrgb_at(0, 0, 0, 2);
     } else if (IS_LAYER_ON(_RAISE)) {
+        rgblight_setrgb_at(0, 0, 0, 1);
         rgblight_setrgb_at(0, 0, 255, 2);
     } else if (IS_LAYER_ON(_ADJUST)) {
-        rgblight_setrgb_at(255, 0, 255, 1);
-        rgblight_setrgb_at(255, 0, 255, 2);
+        rgblight_setrgb_at(255, 255, 0, 1);
+        rgblight_setrgb_at(255, 255, 0, 2);
     } else {
         rgblight_setrgb_at(0, 0, 0, 1);
         rgblight_setrgb_at(0, 0, 0, 2);
